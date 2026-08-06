@@ -2,68 +2,57 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center justify-center p-6">
+      <div className="max-w-md w-full bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-xl text-center space-y-6">
+        
+        {/* Status Tag */}
+        <span className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 bg-gray-700 text-gray-300 rounded-full">
+          Under Development
+        </span>
+
+        {/* Logo Placeholder / Image Space */}
+        <div className="flex justify-center my-4">
+          <div className="w-32 h-32 relative flex items-center justify-center bg-gray-900 rounded-xl border border-gray-700">
+            {/* Replace the src with your logo link or import */}
+            <span className="text-xs text-gray-500">LOGO HERE</span>
+            {/* 
+            <Image 
+              src="/your-logo-path.png" 
+              alt="PoloForge Logo" 
+              width={120} 
+              height={120} 
+              className="object-contain"
+            /> 
+            */}
+          </div>
+        </div>
+
+        {/* Headings */}
+        <div className="space-y-2">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+            PoloForge is Launching Soon
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-sm text-gray-400 leading-relaxed">
+            We are currently building our online store to bring you quality polos and apparel. Check back soon for our official opening.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Notification Form / Button Slot */}
+        <div className="pt-2">
+          {/* ========================================== */}
+          {/* INSERT YOUR NOTIFY BUTTON / CODE HERE      */}
+          {/* ========================================== */}
+          <div className="p-3 bg-gray-900 border border-dashed border-gray-700 rounded-lg text-xs text-gray-500">
+            [ Paste your notification button code here ]
+          </div>
         </div>
-      </main>
-    </div>
+
+      </div>
+      
+      {/* Footer minimal text */}
+      <footer className="mt-8 text-xs text-gray-500">
+        &copy; {new Date().getFullYear()} PoloForge.com. All rights reserved.
+      </footer>
+    </main>
   );
 }
