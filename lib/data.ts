@@ -16,9 +16,9 @@ export interface ItemDetail {
   condition: string | null;
   quantitySoldText: string | null;
   shippingText: string | null;
-  specifics: Record<string, string>;
+  specifics: Record<string, string> | null;   // ← added | null
   description: string | null;
-  imageUrls: string[];
+  imageUrls: string[] | null;                 // ← added | null
 }
 
 const items = itemsData as Item[];
