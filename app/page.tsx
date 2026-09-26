@@ -11,12 +11,9 @@ export default function Home() {
           Under Development
         </span>
 
-        {/* Logo Placeholder / Image Space */}
+        {/* Logo */}
         <div className="flex justify-center my-4">
           <div className="w-32 h-32 relative flex items-center justify-center bg-gray-900 rounded-xl border border-gray-700">
-            {/* Replace the src with your logo link or import */}
-            
-            { 
             <Image 
               src="https://images.poloforge.com/logo_one.png" 
               alt="PoloForge Logo" 
@@ -24,7 +21,6 @@ export default function Home() {
               height={120} 
               className="object-contain"
             /> 
-            }
           </div>
         </div>
 
@@ -38,9 +34,8 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Notification Form / Button Slot */}
-        <div className="pt-2">
-          {/* Notify button — replace the [ Paste your notification button code here ] placeholder */}
+        {/* Buttons */}
+        <div className="pt-2 space-y-3">
           <Link
             href="/notify"
             style={{
@@ -62,18 +57,41 @@ export default function Home() {
           >
             Notify Me When Launched
           </Link>
-                    
-          {/*<div className="p-3 bg-gray-900 border border-dashed border-gray-700 rounded-lg text-xs text-gray-500">*/}
-          {/*</div>*/}
+
+          <Link
+            href="/shop"
+            className="inline-block w-full px-5 py-3.5 rounded border-2 border-gray-600 bg-gray-800 text-gray-200 font-semibold text-sm tracking-wide text-center uppercase hover:bg-gray-700 hover:border-gray-500 transition-colors"
+          >
+            View current storefront with eBay payments still connected →
+          </Link>
         </div>
 
       </div>
       
-      {/* Footer minimal text */}
-      <footer className="mt-8 text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} PoloForge.com. All rights reserved.
-      </footer>
+      {/* Footer with brand logo */}
+      {/* Footer with brand logo */}
+<footer className="mt-10 flex flex-col items-center gap-2">
+  <Link
+    href="https://thompsonsoftware.tech"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
+  >
+    <Image
+      src="https://images.thompsonsoftware.tech/logo.png"
+      alt="Thompson Software"
+      width={80}
+      height={40}
+      className="object-contain opacity-70"
+    />
+    <p className="text-xs text-gray-500 italic">
+      product of thompsonsoftware.tech
+    </p>
+  </Link>
+  <p className="text-xs text-gray-600 mt-1">
+    &copy; {new Date().getFullYear()} PoloForge.com. All rights reserved.
+  </p>
+</footer>
     </main>
   );
 }
-

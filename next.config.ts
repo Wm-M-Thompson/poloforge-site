@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "images.thompsonsoftware.tech",
+      },      
+      {
+        protocol: "https",
         hostname: "images.poloforge.com",
       },
     ],
