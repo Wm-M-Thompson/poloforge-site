@@ -1,5 +1,6 @@
 import itemsData from '../data/items.json';
 import itemDetailsData from '../data/item-details.json';
+import { HIDE_PRO_TEAM_ITEMS, mentionsProTeam } from './blocked-teams';
 
 export interface Item {
   ListingId: string;
@@ -21,7 +22,10 @@ export interface ItemDetail {
   imageUrls: string[] | null;                 // ← added | null
 }
 
-const items = itemsData as Item[];
+// Items showing professional team logos/marks are hidden site-wide (see lib/blocked-teams.ts).
+const items = (itemsData as Item[]).filter(
+  (item) => !(HIDE_PRO_TEAM_ITEMS && mentionsProTeam(item.Title))
+);
 const itemDetails = itemDetailsData as Record<string, ItemDetail>;
 
 // Human-facing labels and display order for departments - keyed by
