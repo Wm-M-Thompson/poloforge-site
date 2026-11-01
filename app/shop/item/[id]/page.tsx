@@ -26,9 +26,10 @@ export default async function ItemPage({ params }: { params: Promise<{ id: strin
   const details = getItemDetails(item.ListingId);
   const category = getCategoryById(item.CategoryId);
 
+  const hasList = !!(details?.imageUrls && details.imageUrls.length > 1);
   const originals = details?.imageUrls && details.imageUrls.length > 0 ? details.imageUrls : [item.FullImageUrl || item.ThumbnailUrl];
-  const images = originals.map((u, i) => itemImageUrl(item.ListingId, i, u));
-
+  const images = hasList ? originals.map((u, i) => itemImageUrl(item.ListingId, i, u)) : originals;
+  
   const condition = splitCondition(details?.condition);
   const shipping = splitShipping(details?.shippingText);
   const returns = details?.specifics?.Returns?.replace(/ /g, ' ').replace(/\s*See details.*$/i, '').trim();
