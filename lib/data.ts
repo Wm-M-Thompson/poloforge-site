@@ -2,6 +2,9 @@ import itemsData from '../data/items.json';
 import itemDetailsData from '../data/item-details.json';
 import { HIDE_PRO_TEAM_ITEMS, mentionsProTeam } from './blocked-teams';
 
+import hiddenData from '../data/hidden-items.json';
+const hidden = new Set<string>(hiddenData as string[]);
+
 export interface Item {
   ListingId: string;
   Title: string;
@@ -24,7 +27,7 @@ export interface ItemDetail {
 
 // Items showing professional team logos/marks are hidden site-wide (see lib/blocked-teams.ts).
 const items = (itemsData as Item[]).filter(
-  (item) => !(HIDE_PRO_TEAM_ITEMS && mentionsProTeam(item.Title))
+       (item) => !hidden.has(item.ListingId) && !(HIDE_PRO_TEAM_ITEMS && mentionsProTeam(item.Title)),
 );
 const itemDetails = itemDetailsData as Record<string, ItemDetail>;
 
