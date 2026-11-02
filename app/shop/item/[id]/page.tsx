@@ -102,9 +102,11 @@ export default async function ItemPage({ params }: { params: Promise<{ id: strin
           </section>
         )}
 
-        <p className="mt-10 text-xs text-gray-500">
-          <a href={item.ItemUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Original eBay listing (for comparison while this demo is being built)</a>
-        </p>
+      <a href={item.ItemUrl} target="_blank" rel="noopener noreferrer" className="mt-10 flex items-center justify-center gap-3 rounded-xl bg-amber-400 px-4 py-4 text-center text-lg md:text-xl font-extrabold text-gray-900 hover:bg-amber-300">
+        <span aria-hidden="true">&rarr;</span>
+        Original eBay listing (for comparison while this demo is being built)
+        <span aria-hidden="true">&larr;</span>
+      </a>
       </div>
     </main>
   );
